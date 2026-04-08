@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Yuga Chandrashekar</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --acc:#e94560;--dark:#0f0f1a;--navy:#1a1a2e;
+  --bg:#f8f8f6;--bg2:#ffffff;--text:#1a1a2e;--muted:#63637a;
+  --border:rgba(0,0,0,0.09);--nav-h:64px;
+}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 6%;z-index:100}
+.nav-logo{font-size:17px;font-weight:800;letter-spacing:-0.5px}
+.nav-logo span{color:var(--acc)}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-size:13px;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+
+main{padding-top:var(--nav-h)}
+
+/* HERO */
+.hero{min-height:94vh;display:flex;align-items:center;padding:0 8%;background:var(--dark);color:#fff;position:relative;overflow:hidden}
+.hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.07;filter:grayscale(100%)}
+.hero::after{content:'';position:absolute;right:-120px;top:-120px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(233,69,96,0.18) 0%,transparent 65%);pointer-events:none}
+.hero-content{max-width:700px;position:relative;z-index:1}
+.hero-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--acc);border:1px solid rgba(233,69,96,0.35);padding:6px 14px;border-radius:100px;margin-bottom:24px}
+.hero h1{font-size:clamp(42px,5.5vw,72px);font-weight:900;line-height:1.05;letter-spacing:-2px;margin-bottom:14px}
+.hero h1 span{color:var(--acc)}
+.hero h2{font-size:clamp(14px,1.5vw,18px);font-weight:400;color:rgba(255,255,255,0.5);margin-bottom:24px}
+.hero p{font-size:16px;line-height:1.8;color:rgba(255,255,255,0.65);max-width:560px;margin-bottom:36px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-pri{padding:13px 26px;background:var(--acc);color:#fff;font-size:14px;font-weight:700;border-radius:8px;transition:opacity .2s}
+.btn-pri:hover{opacity:.85}
+.btn-sec{padding:13px 26px;background:transparent;color:#fff;font-size:14px;font-weight:600;border-radius:8px;border:1.5px solid rgba(255,255,255,0.2);transition:border-color .2s,color .2s}
+.btn-sec:hover{border-color:var(--acc);color:var(--acc)}
+
+section{padding:88px 8%}
+section:nth-child(even){background:var(--bg2)}
+.sec-tag{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--acc);margin-bottom:10px}
+.sec-title{font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-1px;margin-bottom:44px;line-height:1.15}
+
+/* STATS */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.stat-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:28px 24px}
+section:nth-child(even) .stat-card{background:var(--bg)}
+.stat-icon{font-size:22px;margin-bottom:12px}
+.stat-num{font-size:26px;font-weight:900;color:var(--acc);line-height:1;margin-bottom:6px}
+.stat-label{font-size:13px;color:var(--muted);line-height:1.4}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.proj-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+section:nth-child(even) .proj-card{background:var(--bg2)}
+.proj-card:hover{transform:translateY(-5px);box-shadow:0 20px 52px rgba(0,0,0,0.1)}
+.proj-img{height:200px;overflow:hidden;position:relative}
+.proj-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.proj-card:hover .proj-img img{transform:scale(1.05)}
+.proj-img-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,15,26,0.1),rgba(15,15,26,0.55))}
+.proj-img-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.proj-num{font-size:72px;font-weight:900;color:rgba(255,255,255,0.12);letter-spacing:-4px;position:absolute}
+.proj-tag-badge{position:absolute;top:14px;left:14px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(233,69,96,0.85);color:#fff;padding:4px 12px;border-radius:100px;z-index:1}
+.award-badge{position:absolute;top:14px;right:14px;font-size:10px;font-weight:700;background:#f5c518;color:#1a1a2e;padding:4px 10px;border-radius:100px;z-index:1}
+.proj-body{padding:24px;flex:1;display:flex;flex-direction:column}
+.proj-title{font-size:18px;font-weight:800;margin-bottom:8px}
+.proj-desc{font-size:13px;line-height:1.65;color:var(--muted);margin-bottom:14px;flex:1}
+.proj-bullets{list-style:none;padding:0;margin-bottom:16px}
+.proj-bullets li{font-size:12px;color:var(--muted);padding:4px 0 4px 14px;position:relative;line-height:1.5}
+.proj-bullets li::before{content:'▸';position:absolute;left:0;color:var(--acc);font-size:10px;top:5px}
+.proj-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.pill{font-size:11px;font-weight:600;padding:4px 10px;border-radius:100px;background:rgba(26,26,46,0.07);color:var(--text)}
+.proj-cta{font-size:13px;font-weight:700;color:var(--acc);display:flex;align-items:center;gap:5px}
+.proj-cta::after{content:'→'}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.skill-group{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:24px}
+section:nth-child(even) .skill-group{background:var(--bg)}
+.skill-group h3{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--acc);margin-bottom:14px}
+.skill-item{font-size:13px;padding:7px 0;border-bottom:1px solid var(--border);color:var(--text);display:flex;align-items:center;gap:8px}
+.skill-item:last-child{border-bottom:none}
+.skill-item::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--acc);flex-shrink:0}
+
+/* EXPERIENCE */
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.exp-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:28px}
+section:nth-child(even) .exp-card{background:var(--bg)}
+.exp-role{font-size:17px;font-weight:800;margin-bottom:4px}
+.exp-co{font-size:14px;color:var(--acc);font-weight:600;margin-bottom:2px}
+.exp-meta{font-size:12px;color:var(--muted);margin-bottom:16px}
+.exp-summary{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:14px}
+.exp-bullets{list-style:none;padding:0}
+.exp-bullets li{font-size:13px;color:var(--muted);padding:5px 0 5px 16px;position:relative;line-height:1.55}
+.exp-bullets li::before{content:'—';position:absolute;left:0;color:var(--acc);font-weight:700}
+
+/* LEADERSHIP */
+.lead-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.lead-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px 22px;display:flex;gap:14px;align-items:flex-start}
+section:nth-child(even) .lead-card{background:var(--bg)}
+.lead-icon{width:36px;height:36px;border-radius:8px;background:rgba(233,69,96,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px}
+.lead-text{font-size:13px;font-weight:600;line-height:1.45}
+
+/* EDUCATION */
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.edu-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:28px;position:relative;overflow:hidden}
+section:nth-child(even) .edu-card{background:var(--bg)}
+.edu-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--acc);border-radius:14px 0 0 14px}
+.edu-img{width:100%;height:120px;object-fit:cover;object-position:center 40%;border-radius:8px;margin-bottom:16px;opacity:0.85}
+.edu-degree{font-size:15px;font-weight:800;margin-bottom:5px;padding-left:4px}
+.edu-school{font-size:13px;color:var(--acc);font-weight:600;margin-bottom:3px;padding-left:4px}
+.edu-meta{font-size:12px;color:var(--muted);padding-left:4px}
+
+/* CERTS */
+.cert-grid{display:flex;flex-wrap:wrap;gap:14px}
+.cert-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px 20px;display:flex;gap:12px;align-items:center}
+section:nth-child(even) .cert-card{background:var(--bg)}
+.cert-icon{font-size:18px}
+.cert-name{font-size:13px;font-weight:600}
+.cert-issuer{font-size:11px;color:var(--muted)}
+
+/* FINAL CTA */
+.final-cta{background:var(--dark);color:#fff;text-align:center;padding:96px 8%}
+.final-cta .sec-tag{display:inline-block;margin-bottom:16px}
+.final-cta h2{font-size:clamp(28px,4vw,50px);font-weight:900;letter-spacing:-1.5px;margin-bottom:18px}
+.final-cta h2 span{color:var(--acc)}
+.final-cta p{font-size:16px;color:rgba(255,255,255,0.5);max-width:520px;margin:0 auto 36px}
+.final-cta .hero-btns{justify-content:center}
+
+footer{background:#0a0a14;color:rgba(255,255,255,0.3);text-align:center;padding:24px;font-size:13px}
+footer strong{color:rgba(255,255,255,0.7)}
+
+@media(max-width:720px){
+  .exp-grid,.edu-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  section{padding:64px 5%}
+  .hero{padding:64px 5% 80px;min-height:auto;padding-top:calc(var(--nav-h)+40px)}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Yuga<span>.</span></div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-tag">Mechanical Engineer · Product Developer</div>
+    <h1>Yuga<br/><span>Chandrashekar</span></h1>
+    <h2>Mechanical Engineer &nbsp;|&nbsp; Product Design &nbsp;|&nbsp; Engineering Management</h2>
+    <p>I design manufacturable products that move from concept to production. My experience spans thermal management systems, additive manufacturing, and end-to-end product development—combining hands-on engineering with execution-focused decision making.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-pri">View Projects</a>
+      <a href="#" class="btn-sec">Download Resume</a>
+      <a href="https://linkedin.com" class="btn-sec">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="about">
+  <div class="sec-tag">Snapshot</div>
+  <h2 class="sec-title">At a glance.</h2>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-icon">⏱</div>
+      <div class="stat-num">1+</div>
+      <div class="stat-label">Year Industry Experience</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🏭</div>
+      <div class="stat-num">E2E</div>
+      <div class="stat-label">Manufacturing Ownership</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🔩</div>
+      <div class="stat-num">10+</div>
+      <div class="stat-label">Products & Prototypes Designed</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🏆</div>
+      <div class="stat-num">2023</div>
+      <div class="stat-label">Best Project Award</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="sec-tag">Projects / Work</div>
+  <h2 class="sec-title">Featured work.</h2>
+  <div class="projects-grid">
+
+    <!-- Project 01 – Liquid Cold Plates -->
+    <div class="proj-card">
+      <div class="proj-img">
+        <img src="https://raw.githubusercontent.com/FUTURIST13/Portfolio/main/Incresol/LCP/Design%20%26%20Development/LCP%20Surface%20Temp.png" alt="LCP Thermal Analysis"/>
+        <div class="proj-img-overlay"></div>
+        <div class="proj-tag-badge">Thermal Management</div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-title">Liquid Cold Plates</div>
+        <div class="proj-desc">Designed and optimized liquid cold plates for automotive and electrical applications, focusing on heat dissipation, manufacturability, and production scalability.</div>
+        <ul class="proj-bullets">
+          <li>Redesigned internal layouts using ANSYS IcePak & SolidWorks across 70+ iterations</li>
+          <li>Boosted thermal efficiency by 20% while reducing material use</li>
+          <li>Delivered production-ready designs validated through simulation and testing</li>
+        </ul>
+        <div class="proj-pills">
+          <span class="pill">SolidWorks</span>
+          <span class="pill">ANSYS IcePak</span>
+          <span class="pill">CNC Machining</span>
+          <span class="pill">Friction Stir Welding</span>
+        </div>
+        <a href="#" class="proj-cta">View Case Study</a>
+      </div>
+    </div>
+
+    <!-- Project 02 – Oil Spill Recovery Robot -->
+    <div class="proj-card">
+      <div class="proj-img" style="position:relative">
+        <img src="https://raw.githubusercontent.com/FUTURIST13/Portfolio/main/HyCube/Oil%20Collection.png" alt="Oil Spill Recovery Robot"/>
+        <div class="proj-img-overlay"></div>
+        <div class="proj-tag-badge">Electro-Mechanical</div>
+        <div class="award-badge">🏆 Best Project 2023</div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-title">Oil Spill Recovery Robot</div>
+        <div class="proj-desc">Remote-controlled electro-mechanical system to collect crude oil from the ocean surface and separate it from seawater, minimizing environmental damage.</div>
+        <ul class="proj-bullets">
+          <li>Innovated a unique rotating disc separation system after researching existing recovery methods</li>
+          <li>Led mechanical design, system integration, and full SolidWorks assembly modeling</li>
+          <li>Performed buoyancy, motor load, and battery calculations for balanced operation</li>
+          <li>Built and tested prototype in a pool, validating oil recovery flow and iterating on results</li>
+        </ul>
+        <div class="proj-pills">
+          <span class="pill">SolidWorks</span>
+          <span class="pill">System Integration</span>
+          <span class="pill">Buoyancy Analysis</span>
+        </div>
+        <a href="#" class="proj-cta">View Project</a>
+      </div>
+    </div>
+
+    <!-- Project 03 – FDM 3D Printer -->
+    <div class="proj-card">
+      <div class="proj-img" style="position:relative">
+        <img src="https://raw.githubusercontent.com/FUTURIST13/Portfolio/main/HyCube/SLA%20Printing.png" alt="SLA 3D Printing at HyCube Works"/>
+        <div class="proj-img-overlay"></div>
+        <div class="proj-tag-badge">Additive Manufacturing</div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-title">Heated-Chamber FDM 3D Printer</div>
+        <div class="proj-desc">Engineered a custom FDM 3D printer from scratch with an aluminum framework, heated bed, and multi-wall heating chamber to enable stable ABS printing.</div>
+        <ul class="proj-bullets">
+          <li>Designed heated chamber across all four gantry walls to prevent ABS warping</li>
+          <li>Iterated nozzle configuration and heating pad placement over 15–20 calibration cycles</li>
+          <li>Validated performance by progressively scaling print size for consistent surface finish</li>
+        </ul>
+        <div class="proj-pills">
+          <span class="pill">Mechanical Design</span>
+          <span class="pill">Motion Systems</span>
+          <span class="pill">ABS Printing</span>
+          <span class="pill">Rapid Prototyping</span>
+        </div>
+        <a href="#" class="proj-cta">View Project</a>
+      </div>
+    </div>
+
+    <!-- Project 04 – FDM Parameter Optimization -->
+    <div class="proj-card">
+      <div class="proj-img">
+        <div class="proj-img-fallback" style="background:linear-gradient(135deg,#1a150a,#3d2e10)">
+          <div class="proj-num">04</div>
+        </div>
+        <div class="proj-img-overlay"></div>
+        <div class="proj-tag-badge">Research & Testing</div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-title">FDM Parameter Optimization</div>
+        <div class="proj-desc">Systematic study on the effect of layer height and infill patterns on tensile performance of FDM-printed parts per ASTM D638.</div>
+        <ul class="proj-bullets">
+          <li>Tested 6 parameter combinations; identified octet infill at 0.3mm achieved 34.58 N/mm² — a 2.4× improvement over weakest config</li>
+          <li>Delivered application-specific guidelines for aerospace tooling vs. dental/consumer use</li>
+        </ul>
+        <div class="proj-pills">
+          <span class="pill">ASTM D638</span>
+          <span class="pill">Tensile Testing</span>
+          <span class="pill">Minitab</span>
+          <span class="pill">Data Analysis</span>
+        </div>
+        <a href="#" class="proj-cta">View Research</a>
+      </div>
+    </div>
+
+    <!-- Project 05 – Ergonomic Back Cushion -->
+    <div class="proj-card">
+      <div class="proj-img">
+        <div class="proj-img-fallback" style="background:linear-gradient(135deg,#150d1a,#2e1a40)">
+          <div class="proj-num">05</div>
+        </div>
+        <div class="proj-img-overlay"></div>
+        <div class="proj-tag-badge">Product Development</div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-title">Modular Ergonomic Back Cushion</div>
+        <div class="proj-desc">Led end-to-end development of a customizable ergonomic back cushion, translating user pain points into a scalable modular product architecture.</div>
+        <ul class="proj-bullets">
+          <li>Designed and iterated CAD models in SolidWorks for block geometry and adjustability</li>
+          <li>Partnered with research and costing teams to balance user needs, feasibility, and cost</li>
+          <li>Developed modular architecture enabling scalable customization and add-on revenue model</li>
+        </ul>
+        <div class="proj-pills">
+          <span class="pill">SolidWorks</span>
+          <span class="pill">DFM</span>
+          <span class="pill">User Research</span>
+          <span class="pill">Prototyping</span>
+        </div>
+        <a href="#" class="proj-cta">View Project</a>
+      </div>
+    </div>
+
+    <!-- Project 06 – Incresol Engineering Work -->
+    <div class="proj-card">
+      <div class="proj-img">
+        <img src="https://raw.githubusercontent.com/FUTURIST13/Portfolio/main/Incresol/Copper%20Busbars/Assembled%20Busbar.jpg" alt="Assembled Copper Busbar"/>
+        <div class="proj-img-overlay"></div>
+        <div class="proj-tag-badge">Industry · Incresol</div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-title">Copper Busbar & GD&T Projects</div>
+        <div class="proj-desc">Multi-project delivery at Incresol Engineering — from precision GD&T management for a U.S. client to copper busbar assemblies and custom protective packaging.</div>
+        <ul class="proj-bullets">
+          <li>Managed GD&T across 300 oil rig drawings for a U.S. client, ensuring field-reliable tolerances</li>
+          <li>Designed copper busbars with full lamination assemblies and custom fixturing</li>
+          <li>Designed cardboard/thermocol packaging that reduced transit damage for fragile components</li>
+        </ul>
+        <div class="proj-pills">
+          <span class="pill">GD&T</span>
+          <span class="pill">SolidWorks</span>
+          <span class="pill">Busbar Design</span>
+          <span class="pill">Packaging DFM</span>
+        </div>
+        <a href="#" class="proj-cta">View Work</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-tag">Skills</div>
+  <h2 class="sec-title">Technical toolkit.</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h3>Engineering & Design</h3>
+      <div class="skill-item">SolidWorks</div>
+      <div class="skill-item">ANSYS IcePak</div>
+      <div class="skill-item">Autodesk Fusion 360</div>
+      <div class="skill-item">Design for Manufacturability (DFM)</div>
+      <div class="skill-item">Design for Assembly (DFA)</div>
+      <div class="skill-item">GD&T</div>
+      <div class="skill-item">Sheet Metal Design</div>
+    </div>
+    <div class="skill-group">
+      <h3>Manufacturing & Prototyping</h3>
+      <div class="skill-item">Additive Manufacturing (FDM, SLA)</div>
+      <div class="skill-item">CNC Machining</div>
+      <div class="skill-item">Friction Stir Welding (FSW)</div>
+      <div class="skill-item">Rapid Prototyping</div>
+    </div>
+    <div class="skill-group">
+      <h3>Analysis & Tools</h3>
+      <div class="skill-item">Python (Basic)</div>
+      <div class="skill-item">Minitab</div>
+      <div class="skill-item">Advanced Excel</div>
+      <div class="skill-item">PowerPoint</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="sec-tag">Experience</div>
+  <h2 class="sec-title">Where I've worked.</h2>
+  <div class="exp-grid">
+    <div class="exp-card">
+      <div class="exp-role">Design Engineer</div>
+      <div class="exp-co">Incresol Engineering Solutions Pvt. Ltd.</div>
+      <div class="exp-meta">Jul 2023 – Jul 2024 &nbsp;·&nbsp; Bengaluru, India</div>
+      <div class="exp-summary">Designed and delivered liquid cold plates and power distribution components for automotive and electrical applications.</div>
+      <ul class="exp-bullets">
+        <li>Planned and executed complete manufacturing workflows end-to-end</li>
+        <li>Redesigned LCP internal layouts across 70+ iterations; improved thermal efficiency by 20%</li>
+        <li>Managed GD&T on 300 oil rig drawings for a U.S. outsourcing client</li>
+        <li>Designed copper busbars with lamination assemblies and custom fixturing</li>
+        <li>Collaborated across machining, welding, and testing production teams</li>
+      </ul>
+    </div>
+    <div class="exp-card">
+      <div class="exp-role">Product Design Intern</div>
+      <div class="exp-co">HyCube Works Pvt. Ltd.</div>
+      <div class="exp-meta">Jul 2022 – Oct 2022</div>
+      <ul class="exp-bullets" style="margin-top:8px">
+        <li>Designed SLA-based dental surgical guides</li>
+        <li>Developed a heated-chamber FDM 3D printer prototype from scratch</li>
+        <li>Designed and manufactured 3D-printed PCB enclosures</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership">
+  <div class="sec-tag">Leadership & Engagement</div>
+  <h2 class="sec-title">Beyond engineering.</h2>
+  <div class="lead-grid">
+    <div class="lead-card">
+      <div class="lead-icon">⭐</div>
+      <div class="lead-text">Head of BNMIT NCC – Company Sergeant Major & NCC Ambassador</div>
+    </div>
+    <div class="lead-card">
+      <div class="lead-icon">⚡</div>
+      <div class="lead-text">Executive Committee Member – IEEE BNMIT</div>
+    </div>
+    <div class="lead-card">
+      <div class="lead-icon">🎤</div>
+      <div class="lead-text">Event Coordinator – TEDxBNMIT</div>
+    </div>
+    <div class="lead-card">
+      <div class="lead-icon">🏊</div>
+      <div class="lead-text">Represented Karnataka State Water Polo Team</div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="sec-tag">Education</div>
+  <h2 class="sec-title">Academic background.</h2>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <img class="edu-img" src="https://raw.githubusercontent.com/FUTURIST13/Portfolio/main/HyCube/NEU%20COE.jpeg" alt="Northeastern University College of Engineering"/>
+      <div class="edu-degree">Master of Science in Engineering Management</div>
+      <div class="edu-school">Northeastern University, Boston</div>
+      <div class="edu-meta">Expected May 2027 &nbsp;·&nbsp; College of Engineering</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-degree">Bachelor of Technology in Mechanical Engineering</div>
+      <div class="edu-school">BNM Institute of Technology, Bengaluru</div>
+      <div class="edu-meta">CGPA: 7.95</div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="sec-tag">Certifications</div>
+  <h2 class="sec-title">Credentials.</h2>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <div class="cert-icon">🐍</div>
+      <div>
+        <div class="cert-name">Python for Beginners</div>
+        <div class="cert-issuer">Simplilearn</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🔧</div>
+      <div>
+        <div class="cert-name">Design Using SolidWorks</div>
+        <div class="cert-issuer">Sheshnag Technologies</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="contact">
+  <div class="sec-tag">Get in Touch</div>
+  <h2>Let's Build Something<br/><span>That Works</span></h2>
+  <p>Currently seeking Product Development, Mechanical Design, and Engineering Co-op opportunities starting Summer 2026.</p>
+  <div class="hero-btns">
+    <a href="#" class="btn-pri">Download Resume</a>
+    <a href="mailto:chandrashekar.y@northeastern.edu" class="btn-sec">Email Me</a>
+    <a href="https://linkedin.com" class="btn-sec">LinkedIn</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Designed & built with care &nbsp;·&nbsp; <strong>Yuga Chandrashekar</strong> &nbsp;·&nbsp; 2026</p>
+</footer>
+
+<!-- Inject real photos via JS after load -->
+<script>
+(function(){
+  const photos = {
+    robot: "ROBOT_B64",
+    printer: "PRINTER_B64"
+  };
+  document.querySelectorAll('.proj-img img').forEach(img => {
+    if(img.src.includes('ROBOT')) img.src = photos.robot;
+    if(img.src.includes('PRINTER')) img.src = photos.printer;
+  });
+})();
+</script>
+</body>
+</html>
