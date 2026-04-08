@@ -15,6 +15,31 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:999;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.active{display:flex}
+.modal{background:var(--bg2);border-radius:20px;max-width:780px;width:100%;max-height:90vh;overflow-y:auto;position:relative}
+.modal-close{position:sticky;top:0;display:flex;justify-content:flex-end;padding:16px 16px 0;background:var(--bg2);z-index:2}
+.modal-close button{background:rgba(26,26,46,0.08);border:none;width:32px;height:32px;border-radius:50%;font-size:16px;cursor:pointer;color:var(--text);display:flex;align-items:center;justify-content:center}
+.modal-close button:hover{background:rgba(26,26,46,0.15)}
+.modal-body{padding:0 32px 32px}
+.modal-title{font-size:24px;font-weight:900;letter-spacing:-0.5px;margin-bottom:6px}
+.modal-subtitle{font-size:14px;color:var(--acc);font-weight:600;margin-bottom:16px}
+.modal-desc{font-size:14px;line-height:1.7;color:var(--muted);margin-bottom:24px}
+.modal-gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.modal-gallery-item{border-radius:10px;overflow:hidden;position:relative}
+.modal-gallery-item.full{grid-column:1/-1}
+.modal-gallery-item img{width:100%;height:200px;object-fit:cover}
+.modal-gallery-item.full img{height:260px}
+.modal-img-caption{font-size:11px;color:var(--muted);padding:8px 10px;background:var(--bg);line-height:1.4}
+.modal-img-caption strong{color:var(--text);display:block;font-size:12px;margin-bottom:2px}
+.modal-section-title{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--acc);margin:20px 0 12px}
+.modal-bullets{list-style:none;padding:0;margin-bottom:20px}
+.modal-bullets li{font-size:13px;color:var(--muted);padding:5px 0 5px 16px;position:relative;line-height:1.55}
+.modal-bullets li::before{content:'▸';position:absolute;left:0;color:var(--acc);font-size:11px;top:6px}
+.modal-pills{display:flex;flex-wrap:wrap;gap:8px}
+.modal-pill{font-size:12px;font-weight:600;padding:5px 12px;border-radius:100px;background:rgba(26,26,46,0.07);color:var(--text)}
+
 nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 6%;z-index:100}
 .nav-logo{font-size:17px;font-weight:800;letter-spacing:-0.5px}
 .nav-logo span{color:var(--acc)}
@@ -68,7 +93,7 @@ section:nth-child(even) .proj-card{background:var(--bg2)}
 .award-badge{position:absolute;top:14px;right:14px;font-size:10px;font-weight:700;background:#f5c518;color:#1a1a2e;padding:4px 10px;border-radius:100px;z-index:1}
 .proj-body{padding:24px;flex:1;display:flex;flex-direction:column}
 .proj-title{font-size:18px;font-weight:800;margin-bottom:8px}
-.proj-desc{font-size:13px;line-height:1.65;color:var(--muted);margin-bottom:14px;flex:1}
+.proj-desc{font-size:13px;line-height:1.65;color:var(--muted);margin-bottom:14px}
 .proj-bullets{list-style:none;padding:0;margin-bottom:16px}
 .proj-bullets li{font-size:12px;color:var(--muted);padding:4px 0 4px 14px;position:relative;line-height:1.5}
 .proj-bullets li::before{content:'▸';position:absolute;left:0;color:var(--acc);font-size:10px;top:5px}
@@ -179,8 +204,8 @@ footer strong{color:rgba(255,255,255,0.7)}
   <div class="stats-grid">
     <div class="stat-card">
       <div class="stat-icon">⏱</div>
-      <div class="stat-num">1+</div>
-      <div class="stat-label">Year Industry Experience</div>
+      <div class="stat-num">1.5+</div>
+      <div class="stat-label">Years Industry Experience</div>
     </div>
     <div class="stat-card">
       <div class="stat-icon">🏭</div>
@@ -194,8 +219,8 @@ footer strong{color:rgba(255,255,255,0.7)}
     </div>
     <div class="stat-card">
       <div class="stat-icon">🏆</div>
-      <div class="stat-num">2023</div>
-      <div class="stat-label">Best Project Award</div>
+      <div class="stat-num">Best Project</div>
+      <div class="stat-label">Oil Spill Recovery Robot · Academic Achievement 2023</div>
     </div>
   </div>
 </section>
@@ -217,9 +242,9 @@ footer strong{color:rgba(255,255,255,0.7)}
         <div class="proj-title">Liquid Cold Plates</div>
         <div class="proj-desc">Designed and optimized liquid cold plates for automotive and electrical applications, focusing on heat dissipation, manufacturability, and production scalability.</div>
         <ul class="proj-bullets">
-          <li>Redesigned internal layouts using ANSYS IcePak & SolidWorks across 70+ iterations</li>
-          <li>Boosted thermal efficiency by 20% while reducing material use</li>
-          <li>Delivered production-ready designs validated through simulation and testing</li>
+          <li>Iterated 70+ design versions to achieve a 20% improvement in thermal extraction</li>
+          <li>Identified and resolved vortex-induced flow disruptions through channel geometry optimization</li>
+          <li>Collaborated with CNC Machining, Friction Stir Welding, and testing teams throughout production</li>
         </ul>
         <div class="proj-pills">
           <span class="pill">SolidWorks</span>
@@ -227,7 +252,7 @@ footer strong{color:rgba(255,255,255,0.7)}
           <span class="pill">CNC Machining</span>
           <span class="pill">Friction Stir Welding</span>
         </div>
-        <a href="#" class="proj-cta">View Case Study</a>
+        <a href="#" class="proj-cta" onclick="document.getElementById('modal-lcp').classList.add('active');return false;">Read More</a>
       </div>
     </div>
 
@@ -253,7 +278,32 @@ footer strong{color:rgba(255,255,255,0.7)}
           <span class="pill">System Integration</span>
           <span class="pill">Buoyancy Analysis</span>
         </div>
-        <a href="#" class="proj-cta">View Project</a>
+        <a href="#" class="proj-cta">Read More</a>
+      </div>
+    </div>
+
+    <!-- Project 02 – LCP R&D -->
+    <div class="proj-card">
+      <div class="proj-img">
+        <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/LCP/Design%20%26%20Development/R%26D/FSW%20on%20a%20big%20part.jpg" alt="FSW on a large LCP part"/>
+        <div class="proj-img-overlay"></div>
+        <div class="proj-tag-badge">R&D · Manufacturing</div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-title">Friction Stir Welding R&D</div>
+        <div class="proj-desc">Hands-on R&D into friction stir welding techniques and coolant channel geometry to validate manufacturing feasibility and optimize flow performance. Designed a custom fixture to support large-scale parts, improving build consistency and production efficiency.</div>
+        <ul class="proj-bullets">
+          <li>Tested channel widths of 20, 25, and 30mm to evaluate post-weld bulging and flow pressure</li>
+          <li>Designed a custom SolidWorks fixture extending the FSW workbed for large-scale LCP welding</li>
+          <li>Executed section-by-section welding to prevent overheating and deformation</li>
+        </ul>
+        <div class="proj-pills">
+          <span class="pill">SolidWorks</span>
+          <span class="pill">Friction Stir Welding</span>
+          <span class="pill">CNC Machining</span>
+          <span class="pill">Fixture Design</span>
+        </div>
+        <a href="#" class="proj-cta" onclick="document.getElementById('modal-lcp-rd').classList.add('active');return false;">Read More</a>
       </div>
     </div>
 
@@ -278,7 +328,7 @@ footer strong{color:rgba(255,255,255,0.7)}
           <span class="pill">ABS Printing</span>
           <span class="pill">Rapid Prototyping</span>
         </div>
-        <a href="#" class="proj-cta">View Project</a>
+        <a href="#" class="proj-cta">Read More</a>
       </div>
     </div>
 
@@ -304,7 +354,7 @@ footer strong{color:rgba(255,255,255,0.7)}
           <span class="pill">Minitab</span>
           <span class="pill">Data Analysis</span>
         </div>
-        <a href="#" class="proj-cta">View Research</a>
+        <a href="#" class="proj-cta">Read More</a>
       </div>
     </div>
 
@@ -331,7 +381,7 @@ footer strong{color:rgba(255,255,255,0.7)}
           <span class="pill">User Research</span>
           <span class="pill">Prototyping</span>
         </div>
-        <a href="#" class="proj-cta">View Project</a>
+        <a href="#" class="proj-cta">Read More</a>
       </div>
     </div>
 
@@ -356,7 +406,7 @@ footer strong{color:rgba(255,255,255,0.7)}
           <span class="pill">Busbar Design</span>
           <span class="pill">Packaging DFM</span>
         </div>
-        <a href="#" class="proj-cta">View Work</a>
+        <a href="#" class="proj-cta">Read More</a>
       </div>
     </div>
 
@@ -504,6 +554,328 @@ footer strong{color:rgba(255,255,255,0.7)}
 </section>
 
 </main>
+
+<!-- FDM PRINTER MODAL -->
+<div class="modal-overlay" id="modal-fdm" onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="modal">
+    <div class="modal-close"><button onclick="document.getElementById('modal-fdm').classList.remove('active')">✕</button></div>
+    <div class="modal-body">
+      <div class="modal-title">Fixed-Bed FDM 3D Printer</div>
+      <div class="modal-subtitle">Product Design Intern · HyCube Works · 2022</div>
+      <div class="modal-desc">Designed and built a custom fixed-bed FDM 3D printer from scratch using an aluminum framework and linear guide rails for improved printing stability, precision, and ease of maintenance. The fixed-bed design eliminates bed movement during printing, reducing positional errors and improving layer consistency.</div>
+
+      <div class="modal-section-title">Build & Assembly</div>
+      <div class="modal-gallery">
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Fixed%20Bed/Internship/Printer%20Chassis.jpeg" alt="Printer Chassis"/>
+          <div class="modal-img-caption"><strong>Printer Chassis</strong>Aluminum framework with linear guide rails providing the structural foundation and motion system for the printer.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Fixed%20Bed/Internship/Printer%20Side.jpeg" alt="Printer Side View"/>
+          <div class="modal-img-caption"><strong>Side View</strong>Heating pad integration across gantry walls visible, showing the enclosed chamber design for ABS temperature control.</div>
+        </div>
+        <div class="modal-gallery-item full">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Fixed%20Bed/Internship/Fixed%20Bed%20Printer%20Assembly.jpg" alt="Fixed Bed Printer Assembly"/>
+          <div class="modal-img-caption"><strong>Complete Assembly</strong>Fully assembled heated-chamber FDM printer after calibration, ready for ABS test prints.</div>
+        </div>
+      </div>
+
+      <div class="modal-section-title">Key Outcomes</div>
+      <ul class="modal-bullets">
+        <li>Engineered a heated chamber across all four gantry walls to maintain optimal ABS printing temperature</li>
+        <li>Resolved nozzle clogging and adhesion inconsistencies through 15–20 iterative calibration cycles</li>
+        <li>Successfully produced high-quality ABS prints with progressively larger part sizes</li>
+        <li>Validated prototype design for functional use through consistent surface finish and structural integrity</li>
+      </ul>
+
+      <div class="modal-section-title">Tools & Methods</div>
+      <div class="modal-pills">
+        <span class="modal-pill">Mechanical Design</span>
+        <span class="modal-pill">Aluminum Framework</span>
+        <span class="modal-pill">Linear Guide Rails</span>
+        <span class="modal-pill">ABS Printing</span>
+        <span class="modal-pill">Thermal Management</span>
+        <span class="modal-pill">Rapid Prototyping</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PCB ENCLOSURE MODAL -->
+<div class="modal-overlay" id="modal-enclosure" onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="modal">
+    <div class="modal-close"><button onclick="document.getElementById('modal-enclosure').classList.remove('active')">✕</button></div>
+    <div class="modal-body">
+      <div class="modal-title">3D Printed PCB Enclosures</div>
+      <div class="modal-subtitle">Product Design Intern · HyCube Works · 2022</div>
+      <div class="modal-desc">Designed and 3D printed custom PCB enclosures using FDM printing, iterating from CAD slicing through to final assembled parts. Design decisions accounted for human factors, operating conditions, limitations, and wire management to deliver a functional, user-considerate product.</div>
+
+      <div class="modal-section-title">CAD & Slicing</div>
+      <div class="modal-gallery">
+        <div class="modal-gallery-item full">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Fixed%20Bed/Internship/Enclosure%20Assembly%20(Iso%20View).png" alt="Enclosure Iso View"/>
+          <div class="modal-img-caption"><strong>Enclosure Assembly — Isometric View</strong>Full CAD assembly showing top and base enclosure halves, fastener placement, and overall form factor.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Fixed%20Bed/Internship/Enclosure%20Assembly.png" alt="Enclosure Assembly"/>
+          <div class="modal-img-caption"><strong>Enclosure Assembly</strong>Exploded or assembled CAD view showing component fit and internal layout.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Fixed%20Bed/Internship/Enclosure%20Top%20-%20Slicing.png" alt="Enclosure Top Slicing"/>
+          <div class="modal-img-caption"><strong>Top — Slicing Setup</strong>Slicer configuration for enclosure top, showing layer orientation and support strategy.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Fixed%20Bed/Internship/Enclosure%20Base%20-%20Slicing.png" alt="Enclosure Base Slicing"/>
+          <div class="modal-img-caption"><strong>Base — Slicing Setup</strong>Slicer configuration for enclosure base with optimized infill and wall settings.</div>
+        </div>
+      </div>
+
+      <div class="modal-section-title">Printed Parts & Final Assembly</div>
+      <div class="modal-gallery">
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Fixed%20Bed/Internship/Enclosure%20Base%20.jpeg" alt="Enclosure Base Printed"/>
+          <div class="modal-img-caption"><strong>Printed Base</strong>FDM printed enclosure base showing surface finish and fit features.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Fixed%20Bed/Internship/3D%20printed%20Enclosure%20Top%20with%20PCB.jpeg" alt="Enclosure Top with PCB"/>
+          <div class="modal-img-caption"><strong>Top with PCB Installed</strong>Printed enclosure top with PCB fitted, validating component clearances and mounting geometry.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Fixed%20Bed/Internship/Enclosure%20Assembly%201.jpeg" alt="Enclosure Assembly 1"/>
+          <div class="modal-img-caption"><strong>Final Assembly — View 1</strong>Fully assembled enclosure showing overall form, port cutouts, and surface quality.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Fixed%20Bed/Internship/Enclosure%20Assembly%202.jpeg" alt="Enclosure Assembly 2"/>
+          <div class="modal-img-caption"><strong>Final Assembly — View 2</strong>Alternate angle showing wire management features and enclosure closure mechanism.</div>
+        </div>
+      </div>
+
+      <div class="modal-section-title">Dental Surgical Guides (SLA)</div>
+      <ul class="modal-bullets">
+        <li>Worked on developing dental surgical guides using SLA 3D printing</li>
+        <li>Researched biocompatible materials suitable for SLA printing in dental applications</li>
+        <li>Tested print quality and dimensional accuracy of guides for surgical fit</li>
+      </ul>
+
+      <div class="modal-section-title">Tools & Methods</div>
+      <div class="modal-pills">
+        <span class="modal-pill">FDM Printing</span>
+        <span class="modal-pill">SLA Printing</span>
+        <span class="modal-pill">SolidWorks</span>
+        <span class="modal-pill">Slicing Software</span>
+        <span class="modal-pill">DFM</span>
+        <span class="modal-pill">Human Factors Design</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ROBOT MODAL -->
+<div class="modal-overlay" id="modal-robot" onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="modal">
+    <div class="modal-close"><button onclick="document.getElementById('modal-robot').classList.remove('active')">✕</button></div>
+    <div class="modal-body">
+      <div class="modal-title">Oil Spill Recovery Robot</div>
+      <div class="modal-subtitle">Final Year Project · BNM Institute of Technology · Best Project Award 2023</div>
+      <div class="modal-desc">Designed and built a remote-controlled electro-mechanical system to collect crude oil from the ocean surface and separate it from seawater. Innovated a unique rotating disc separation system after researching existing recovery methods. Performed buoyancy, motor load, and battery calculations to ensure balanced operation, then built and validated a working prototype.</div>
+
+      <div class="modal-section-title">Hull Fabrication</div>
+      <div class="modal-gallery">
+        <div class="modal-gallery-item full">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/BNMIT%20Final%20Yr%20Project/Hull%20Fabrication.jpg" alt="Hull Fabrication"/>
+          <div class="modal-img-caption"><strong>Hull Fabrication</strong>Custom hull structure fabricated to house the oil recovery and separation system, designed for buoyancy and stability on water.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/BNMIT%20Final%20Yr%20Project/Hull%20Front.jpg" alt="Hull Front View"/>
+          <div class="modal-img-caption"><strong>Hull — Front View</strong>Front profile showing inlet geometry designed for oil collection at the water surface.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/BNMIT%20Final%20Yr%20Project/Hull%20Side.jpg" alt="Hull Side View"/>
+          <div class="modal-img-caption"><strong>Hull — Side View</strong>Side profile showing overall form factor, waterline placement, and component layout.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/BNMIT%20Final%20Yr%20Project/Hull%20Props.jpg" alt="Hull Propulsion"/>
+          <div class="modal-img-caption"><strong>Propulsion System</strong>Motor and propeller configuration enabling remote-controlled navigation across the water surface.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/BNMIT%20Final%20Yr%20Project/Hull%20%26%20Electronics%20Setup.jpg" alt="Hull and Electronics Setup"/>
+          <div class="modal-img-caption"><strong>Electronics Integration</strong>Full electronics setup including motor drivers, battery pack, and RC receiver integrated within the hull.</div>
+        </div>
+      </div>
+
+      <div class="modal-section-title">Oil Separation System</div>
+      <div class="modal-gallery">
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/BNMIT%20Final%20Yr%20Project/Seperation%201.jpg" alt="Oil Separation 1"/>
+          <div class="modal-img-caption"><strong>Separation — Stage 1</strong>Rotating disc system collecting oil from the water surface, leveraging surface tension differential between oil and water.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/BNMIT%20Final%20Yr%20Project/Seperation%202.jpg" alt="Oil Separation 2"/>
+          <div class="modal-img-caption"><strong>Separation — Stage 2</strong>Collected oil channeled into the storage compartment, validating the separation flow during pool testing.</div>
+        </div>
+      </div>
+
+      <div class="modal-section-title">Key Outcomes</div>
+      <ul class="modal-bullets">
+        <li>Innovated a rotating disc separation system to exploit oil-water surface tension differential</li>
+        <li>Performed buoyancy, motor load, and battery calculations ensuring stable operation</li>
+        <li>Built and tested prototype in a pool, validating oil recovery flow and iterating on results</li>
+        <li>Modeled complete assembly in SolidWorks for structural integrity verification</li>
+        <li>Recognized with Best Project Award 2023 at BNM Institute of Technology</li>
+      </ul>
+
+      <div class="modal-section-title">Tools & Methods</div>
+      <div class="modal-pills">
+        <span class="modal-pill">SolidWorks</span>
+        <span class="modal-pill">System Integration</span>
+        <span class="modal-pill">Buoyancy Analysis</span>
+        <span class="modal-pill">Mechanical Design</span>
+        <span class="modal-pill">Prototyping</span>
+        <span class="modal-pill">Pool Testing</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LCP R&D MODAL -->
+<div class="modal-overlay" id="modal-lcp-rd" onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="modal">
+    <div class="modal-close"><button onclick="document.getElementById('modal-lcp-rd').classList.remove('active')">✕</button></div>
+    <div class="modal-body">
+      <div class="modal-title">Friction Stir Welding R&D</div>
+      <div class="modal-subtitle">Design Engineer · Incresol Engineering Solutions · 2023–2024</div>
+      <div class="modal-desc">Led R&D efforts on friction stir welding at Incresol Engineering Solutions, optimizing liquid cold plate designs for improved thermal performance and manufacturability. Designed a custom fixture to support large-scale part geometry, enabling consistent FSW welds and improving lead time and production efficiency.</div>
+
+      <div class="modal-section-title">Fixture Design</div>
+      <div class="modal-gallery">
+        <div class="modal-gallery-item full">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/LCP/Fixture%20Design/Fixture%20Design%20dwg.jpg" alt="Fixture Design Drawing"/>
+          <div class="modal-img-caption"><strong>Fixture Design Drawing</strong>Custom fixture engineered in SolidWorks to extend the FSW workbed and support the full part, ensuring uniform clamping and preventing deformation during welding.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/LCP/Fixture%20Design/Fix1.jpg" alt="Fixture Build 1"/>
+          <div class="modal-img-caption"><strong>Fixture — View 1</strong>Fabricated fixture mounted on the FSW workbed, aligned for large-scale LCP part support.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/LCP/Fixture%20Design/Fix2.jpg" alt="Fixture Build 2"/>
+          <div class="modal-img-caption"><strong>Fixture — View 2</strong>Side profile showing fixture extension geometry and clamping configuration.</div>
+        </div>
+      </div>
+
+      <div class="modal-section-title">FSW & Channel Width R&D</div>
+      <div class="modal-gallery">
+        <div class="modal-gallery-item full">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/LCP/Design%20%26%20Development/R%26D/FSW%20on%20a%20big%20part.jpg" alt="FSW on large part"/>
+          <div class="modal-img-caption"><strong>FSW on Large-Scale LCP</strong>Section-by-section welding executed to maintain part integrity, avoid overheating, and ensure consistent weld quality across the full part length.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/LCP/Design%20%26%20Development/R%26D/LCP%20with%20different%20channel%20widths.jpg" alt="LCP channel width variants"/>
+          <div class="modal-img-caption"><strong>Channel Width Variants</strong>Test parts with 20mm, 25mm, and 30mm channel widths evaluated for post-weld bulging and coolant flow pressure effects.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/LCP/Design%20%26%20Development/R%26D/FSW1.jpg" alt="FSW Process 1"/>
+          <div class="modal-img-caption"><strong>FSW Process</strong>Friction stir welding in progress on test block, monitoring heat input and travel speed for consistent weld quality.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/LCP/Design%20%26%20Development/R%26D/FSW3.jpg" alt="FSW Process 3"/>
+          <div class="modal-img-caption"><strong>FSW Result</strong>Post-weld surface showing weld seam quality and surface finish prior to flatness verification.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/LCP/Design%20%26%20Development/R%26D/Pre-Final%20Test%20Block.jpg" alt="Pre-Final Test Block"/>
+          <div class="modal-img-caption"><strong>Pre-Final Test Block</strong>Near-complete test block undergoing flatness checks and surface finishing before pressure testing.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/LCP/Design%20%26%20Development/R%26D/Final%20Test%20Block.jpg" alt="Final Test Block"/>
+          <div class="modal-img-caption"><strong>Final Test Block</strong>Completed LCP test block after surface finishing, weld quality verification, and fluid pressure leak testing.</div>
+        </div>
+      </div>
+
+      <div class="modal-section-title">Key Outcomes</div>
+      <ul class="modal-bullets">
+        <li>Identified optimal channel width by evaluating top-plate bulging and flow pressure across 20, 25, and 30mm variants</li>
+        <li>Designed a custom fixture extending the FSW workbed, enabling large-scale LCP manufacturing previously not feasible</li>
+        <li>Executed section-by-section welding strategy to prevent overheating and part deformation</li>
+        <li>Optimized design for manufacturability, reducing material usage while maintaining structural integrity</li>
+        <li>Validated final parts through flatness checks, surface finishing, and fluid pressure leak testing</li>
+      </ul>
+
+      <div class="modal-section-title">Tools & Methods</div>
+      <div class="modal-pills">
+        <span class="modal-pill">SolidWorks</span>
+        <span class="modal-pill">Friction Stir Welding</span>
+        <span class="modal-pill">CNC Machining</span>
+        <span class="modal-pill">Fixture Design</span>
+        <span class="modal-pill">DFM</span>
+        <span class="modal-pill">Flatness Testing</span>
+        <span class="modal-pill">Pressure Testing</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LCP MODAL -->
+<div class="modal-overlay" id="modal-lcp" onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="modal">
+    <div class="modal-close"><button onclick="document.getElementById('modal-lcp').classList.remove('active')">✕</button></div>
+    <div class="modal-body">
+      <div class="modal-title">Liquid Cold Plates</div>
+      <div class="modal-subtitle">Design Engineer · Incresol Engineering Solutions · 2023–2024</div>
+      <div class="modal-desc">Designed and optimized liquid cold plates for automotive and electrical applications. Iterated across 70+ design versions using ANSYS IcePak and SolidWorks, achieving a 20% improvement in thermal efficiency while reducing material use. Delivered production-ready designs validated through simulation and physical testing.</div>
+
+      <div class="modal-section-title">Design & Simulation</div>
+      <div class="modal-gallery">
+        <div class="modal-gallery-item full">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/LCP/Design%20%26%20Development/LCP%20Assembly.png" alt="LCP Assembly"/>
+          <div class="modal-img-caption"><strong>LCP Assembly</strong>Final assembly model showing internal channel layout and port configuration designed for manufacturability.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/LCP/Design%20%26%20Development/ANSYS%20Setup1.png" alt="ANSYS Setup 1"/>
+          <div class="modal-img-caption"><strong>ANSYS IcePak Setup 1</strong>Thermal boundary conditions and heat source configuration for simulation.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/LCP/Design%20%26%20Development/ANSYS%20Setup2.png" alt="ANSYS Setup 2"/>
+          <div class="modal-img-caption"><strong>ANSYS IcePak Setup 2</strong>Mesh refinement and solver settings optimized for accurate fluid-thermal coupling.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/LCP/Design%20%26%20Development/LCP%20Surface%20Temp.png" alt="LCP Surface Temperature"/>
+          <div class="modal-img-caption"><strong>Surface Temperature Map 1</strong>Thermal distribution across the cold plate surface showing hotspot identification.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/LCP/Design%20%26%20Development/LCP%20Surface%20Temp2.jpeg" alt="LCP Surface Temperature 2"/>
+          <div class="modal-img-caption"><strong>Surface Temperature Map 2</strong>Optimized design iteration showing improved temperature uniformity across the plate.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/LCP/Design%20%26%20Development/Fluid%20Flow%20Speed.png" alt="Fluid Flow Speed"/>
+          <div class="modal-img-caption"><strong>Coolant Flow Velocity</strong>Flow speed distribution showing uniform coolant delivery across internal channels.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/LCP/Design%20%26%20Development/Fluid%20Flow%20Prob%20-%20Vortex.jpg" alt="Fluid Flow Vortex Problem"/>
+          <div class="modal-img-caption"><strong>Challenge: Vortex Formation</strong>Identified vortex zones disrupting coolant flow and reducing heat extraction efficiency — resolved through channel geometry redesign.</div>
+        </div>
+      </div>
+
+      <div class="modal-section-title">Key Outcomes</div>
+      <ul class="modal-bullets">
+        <li>Improved thermal extraction by 20% across 70+ design iterations</li>
+        <li>Identified and resolved vortex-induced flow disruptions through channel geometry optimization</li>
+        <li>Reduced material usage while maintaining structural and thermal performance</li>
+        <li>Delivered production-ready designs validated through simulation and physical testing</li>
+        <li>Collaborated with CNC Machining, Friction Stir Welding, and testing teams throughout production</li>
+      </ul>
+
+      <div class="modal-section-title">Tools & Methods</div>
+      <div class="modal-pills">
+        <span class="modal-pill">SolidWorks</span>
+        <span class="modal-pill">ANSYS IcePak</span>
+        <span class="modal-pill">CNC Machining</span>
+        <span class="modal-pill">Friction Stir Welding</span>
+        <span class="modal-pill">DFM</span>
+        <span class="modal-pill">Thermal Analysis</span>
+        <span class="modal-pill">Fluid Flow Simulation</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <footer>
   <p>Designed & built with care &nbsp;·&nbsp; <strong>Yuga Chandrashekar</strong> &nbsp;·&nbsp; 2026</p>
