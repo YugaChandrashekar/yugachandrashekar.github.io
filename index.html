@@ -92,7 +92,7 @@ section:nth-child(even) .proj-card{background:var(--bg2)}
 .proj-tag-badge{position:absolute;top:14px;left:14px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(233,69,96,0.85);color:#fff;padding:4px 12px;border-radius:100px;z-index:1}
 .award-badge{position:absolute;top:14px;right:14px;font-size:10px;font-weight:700;background:#f5c518;color:#1a1a2e;padding:4px 10px;border-radius:100px;z-index:1}
 .proj-body{padding:24px;flex:1;display:flex;flex-direction:column}
-.proj-location{font-size:11px;font-weight:600;color:var(--muted);margin-bottom:6px;letter-spacing:0.3px}
+.proj-location{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(26,26,46,0.07);color:var(--muted);padding:3px 10px;border-radius:100px;margin-bottom:8px}
 .proj-title{font-size:18px;font-weight:800;margin-bottom:8px}
 .proj-desc{font-size:13px;line-height:1.65;color:var(--muted);margin-bottom:14px}
 .proj-bullets{list-style:none;padding:0;margin-bottom:16px}
@@ -555,6 +555,72 @@ footer strong{color:rgba(255,255,255,0.7)}
 </section>
 
 </main>
+
+<!-- BUSBAR MODAL -->
+<div class="modal-overlay" id="modal-busbar" onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="modal">
+    <div class="modal-close"><button onclick="document.getElementById('modal-busbar').classList.remove('active')">✕</button></div>
+    <div class="modal-body">
+      <div class="modal-title">Copper Busbar & GD&T Projects</div>
+      <div class="modal-subtitle">Design Engineer · Incresol Engineering Solutions · 2023–2024</div>
+      <div class="modal-desc">Multi-project delivery at Incresol Engineering spanning copper busbar design, precision GD&T documentation for a U.S. client, and custom protective packaging design.</div>
+
+      <div class="modal-section-title">Copper Busbar Design</div>
+      <div class="modal-gallery">
+        <div class="modal-gallery-item full">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/Copper%20Busbars/Assembled%20Busbar.jpg" alt="Assembled Busbar"/>
+          <div class="modal-img-caption"><strong>Assembled Busbar</strong>Final copper busbar assembly with lamination layers and custom fixture alignment.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/Copper%20Busbars/Busbar%20Assembly%20Fixture.jpg" alt="Busbar Assembly Fixture"/>
+          <div class="modal-img-caption"><strong>Assembly Fixture</strong>Custom fixture designed to support accurate lamination and alignment during assembly.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/Copper%20Busbars/Busbar%20Cold%20Press.jpg" alt="Busbar Cold Press"/>
+          <div class="modal-img-caption"><strong>Cold Press</strong>Cold pressing process to bond lamination layers with calculated pressure for smooth assembly.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/Copper%20Busbars/Busbar%20Hot%20Press.jpg" alt="Busbar Hot Press"/>
+          <div class="modal-img-caption"><strong>Hot Press</strong>Hot pressing stage for final lamination consolidation.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/Copper%20Busbars/Final%20Busbar.jpg" alt="Final Busbar"/>
+          <div class="modal-img-caption"><strong>Final Busbar</strong>Completed busbar after surface finishing and quality inspection.</div>
+        </div>
+      </div>
+
+      <div class="modal-section-title">GD&T Documentation</div>
+      <div class="modal-gallery">
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/GD%26T/GDT1.png" alt="GD&T Drawing 1"/>
+          <div class="modal-img-caption"><strong>GD&T Drawing 1</strong>Precision tolerance callouts managed across oil rig component drawings for a U.S. client.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/Incresol/GD%26T/GDT2.png" alt="GD&T Drawing 2"/>
+          <div class="modal-img-caption"><strong>GD&T Drawing 2</strong>Detailed GD&T annotations ensuring field reliability and manufacturing accuracy.</div>
+        </div>
+      </div>
+
+      <div class="modal-section-title">Key Outcomes</div>
+      <ul class="modal-bullets">
+        <li>Designed copper busbars in SolidWorks with full lamination assemblies and custom fixturing</li>
+        <li>Calculated exact lamination pressure for smooth and accurate busbar assembly</li>
+        <li>Managed GD&T across 300 oil rig drawings for a U.S. client, ensuring field-reliable tolerances</li>
+        <li>Designed custom cardboard and thermocol packaging, reducing transit damage for fragile components</li>
+      </ul>
+
+      <div class="modal-section-title">Tools & Methods</div>
+      <div class="modal-pills">
+        <span class="modal-pill">SolidWorks</span>
+        <span class="modal-pill">GD&T</span>
+        <span class="modal-pill">Busbar Design</span>
+        <span class="modal-pill">Fixture Design</span>
+        <span class="modal-pill">Packaging DFM</span>
+        <span class="modal-pill">Lamination Engineering</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- FDM PRINTER MODAL -->
 <div class="modal-overlay" id="modal-fdm" onclick="if(event.target===this)this.classList.remove('active')">
