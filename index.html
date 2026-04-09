@@ -251,13 +251,13 @@ footer strong{color:rgba(255,255,255,0.7)}
           <li>Partnered with research and costing teams to balance user needs, feasibility, and cost</li>
           <li>Developed modular architecture enabling scalable customization and add-on revenue model</li>
         </ul>
-        <div class="proj-pills">
+        <div class="proj-pills">ls "HyCube/Parameter_/"
           <span class="pill">SolidWorks</span>
           <span class="pill">DFM</span>
           <span class="pill">User Research</span>
           <span class="pill">Prototyping</span>
         </div>
-        <a href="#" class="proj-cta">Read More</a>
+        <a href="#" class="proj-cta" onclick="document.getElementById('modal-cushion').classList.add('active');return false;">Read More</a>
       </div>
     </div>
 
@@ -561,6 +561,65 @@ footer strong{color:rgba(255,255,255,0.7)}
 </section>
 
 </main>
+
+<!-- BACK CUSHION MODAL -->
+<div class="modal-overlay" id="modal-cushion" onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="modal">
+    <div class="modal-close"><button onclick="document.getElementById('modal-cushion').classList.remove('active')">✕</button></div>
+    <div class="modal-body">
+      <div class="modal-title">Modular Ergonomic Back Cushion</div>
+      <div class="modal-subtitle">Engineering Product Design Methodology · Northeastern University · 2024</div>
+      <div class="modal-desc">A semester-long product development project spanning over 3 months. Identified a gap in static ergonomic solutions and developed a customizable modular back cushion system — designed for adaptability, user comfort, and scalable manufacturing.</div>
+
+      <div class="modal-section-title">Design & Prototyping</div>
+      <div class="modal-gallery">
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/Back%20Cushion/A8.2%20-%20A.jpg" alt="Sketch A"/>
+          <div class="modal-img-caption"><strong>Part & Assembly Sketches — A</strong>Early ideation sketches exploring modular block geometry and adjustability mechanisms.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/Back%20Cushion/A8.2%20-%20B1.jpg" alt="Sketch B1"/>
+          <div class="modal-img-caption"><strong>Part & Assembly Sketches — B1</strong>Refined sketches detailing component interfaces and modular attachment system.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/Back%20Cushion/A8.2%20-%20B2.jpg" alt="Sketch B2"/>
+          <div class="modal-img-caption"><strong>Part & Assembly Sketches — B2</strong>Assembly sketches showing how modular blocks connect and adjust for different user profiles.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/Back%20Cushion/A8.3.jpeg" alt="Sketch A8.3"/>
+          <div class="modal-img-caption"><strong>Final Design Sketches</strong>Finalized design sketches with dimensions and material callouts ahead of prototype build.</div>
+        </div>
+        <div class="modal-gallery-item full">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/Back%20Cushion/Final%20Prototype.jpg" alt="Final Prototype"/>
+          <div class="modal-img-caption"><strong>Final Prototype</strong>Completed modular ergonomic back cushion presented at end-of-semester review, demonstrating adjustability and user-centered design.</div>
+        </div>
+        <div class="modal-gallery-item full">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/Back%20Cushion/Group%20Picture.jpg" alt="Team Photo"/>
+          <div class="modal-img-caption"><strong>Project Team</strong>Team and professor at the final presentation of the Engineering Product Design Methodology course.</div>
+        </div>
+      </div>
+
+      <div class="modal-section-title">Key Outcomes</div>
+      <ul class="modal-bullets">
+        <li>Identified a gap in static ergonomic solutions and introduced a customizable modular support system</li>
+        <li>Applied design thinking methodology — user research, sketching, prototyping, and iteration — over 3+ months</li>
+        <li>Designed and iterated CAD models in SolidWorks for block geometry and adjustability</li>
+        <li>Partnered with cross-functional team members across research, design, and cost engineering</li>
+        <li>Developed a modular architecture enabling scalable customization and potential add-on revenue model</li>
+      </ul>
+
+      <div class="modal-section-title">Tools & Methods</div>
+      <div class="modal-pills">
+        <span class="modal-pill">SolidWorks</span>
+        <span class="modal-pill">Design Thinking</span>
+        <span class="modal-pill">DFM</span>
+        <span class="modal-pill">User Research</span>
+        <span class="modal-pill">Prototyping</span>
+        <span class="modal-pill">Sketching</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- BUSBAR MODAL -->
 <div class="modal-overlay" id="modal-busbar" onclick="if(event.target===this)this.classList.remove('active')">
