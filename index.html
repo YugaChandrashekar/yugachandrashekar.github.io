@@ -642,7 +642,69 @@ footer strong{color:rgba(255,255,255,0.7)}
   </div>
 </div>
 
-<!-- BUSBAR MODAL -->
+<!-- FDM PARAM MODAL -->
+<div class="modal-overlay" id="modal-fdm-param" onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="modal">
+    <div class="modal-close"><button onclick="document.getElementById('modal-fdm-param').classList.remove('active')">✕</button></div>
+    <div class="modal-body">
+      <div class="modal-title">FDM Parameter Optimization</div>
+      <div class="modal-subtitle">Mini Project · BNM Institute of Technology · 2022</div>
+      <div class="modal-desc">A systematic study to optimize the best combination of FDM printing parameters for PETG material, using tensile strength as the performance metric. Two key parameters were varied — layer height (0.2mm & 0.3mm) and infill pattern (Grid, Triangle, Octet) — while infill density (60%) and shell thickness (1.2mm) were kept constant. Six parameter combinations were tested per ASTM D638 standards to identify optimal configurations for different application types.</div>
+
+      <div class="modal-section-title">Specimen Design & Preparation</div>
+      <div class="modal-gallery">
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/Optimization%20Project/CAD%20Model%20of%20ASTM%20D638%20test%20specimen.png" alt="CAD Model"/>
+          <div class="modal-img-caption"><strong>CAD Model — ASTM D638 Specimen</strong>Dog-bone shaped test specimen modeled per ASTM D638 standard. Overall length: 165mm, gauge length: 50mm, width: 13mm, thickness: 3.2mm.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/Optimization%20Project/Slicing%20of%20test%20specimen.png" alt="Slicing"/>
+          <div class="modal-img-caption"><strong>Slicing — Parameter Configuration</strong>Three infill patterns (Grid, Triangle, Octet) configured in Ultimaker Cura across two layer heights, producing 6 unique test configurations.</div>
+        </div>
+        <div class="modal-gallery-item full">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/Optimization%20Project/ASTM%20D638%20test%20specimen%20after%203D%20printing.png" alt="Printed Specimens"/>
+          <div class="modal-img-caption"><strong>Printed Test Specimens</strong>All six PETG test specimens printed on Creality Ender 3 Pro, ready for tensile testing.</div>
+        </div>
+      </div>
+
+      <div class="modal-section-title">Testing & Results</div>
+      <div class="modal-gallery">
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/Optimization%20Project/Experimental%20Setup%20of%20ASTM%20D638%20test.png" alt="Test Setup"/>
+          <div class="modal-img-caption"><strong>Tensile Test Setup</strong>Specimens tested on a universal testing machine per ASTM D638-14:2014. Load vs. cross head travel recorded for each configuration.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/Optimization%20Project/Specimen%20after%20testing.png" alt="Specimens After Testing"/>
+          <div class="modal-img-caption"><strong>Specimens After Testing</strong>Fractured specimens showing failure modes across different infill patterns and layer heights.</div>
+        </div>
+      </div>
+
+      <div class="modal-section-title">Test Results</div>
+      <ul class="modal-bullets">
+        <li><strong>Octet 0.3mm</strong> — Highest tensile stress: 34.58 N/mm² · Fracture point: 1.327 KN</li>
+        <li><strong>Grid 0.3mm</strong> — Tensile stress: 22.78 N/mm² · Highest fracture point at 0.3mm layer height: 0.860 KN</li>
+        <li><strong>Triangle 0.3mm</strong> — Tensile stress: 16.83 N/mm² · Fracture point: 0.610 KN</li>
+        <li><strong>Octet 0.2mm</strong> — Tensile stress: 14.27 N/mm² · Fracture point: 0.539 KN</li>
+        <li><strong>Grid 0.2mm</strong> — Tensile stress: 12.37 N/mm² · Fracture point: 0.474 KN</li>
+        <li><strong>Triangle 0.2mm</strong> — Lowest tensile stress: 9.12 N/mm² · Fracture point: 0.349 KN</li>
+      </ul>
+
+      <div class="modal-section-title">Key Outcomes</div>
+      <ul class="modal-bullets">
+        <li>Octet infill at 0.3mm achieved 34.58 N/mm² — a 2.4× improvement over the weakest configuration</li>
+        <li>0.3mm layer height consistently outperformed 0.2mm across all infill patterns</li>
+        <li>Recommended Octet/Grid at 0.3mm for aerospace tooling, jigs, fixtures, and functional parts</li>
+        <li>Recommended Triangle/low-density configs for dental guides, jewelry, and aesthetic prototypes</li>
+      </ul>
+
+      <div class="modal-section-title">Tools & Methods</div>
+      <div class="modal-pills">
+        <span class="modal-pill">FDM Printing</span>
+        <span class="modal-pill">ASTM D638</span>
+        <span class="modal-pill">Ultimaker Cura</span>
+        <span class="modal-pill">Tensile Testing</span>
+        <span class="modal-pill">PETG Material</span>
+        <span class=
 <div class="modal-overlay" id="modal-busbar" onclick="if(event.target===this)this.classList.remove('active')">
   <div class="modal">
     <div class="modal-close"><button onclick="document.getElementById('modal-busbar').classList.remove('active')">✕</button></div>
