@@ -263,6 +263,60 @@ footer strong{color:rgba(255,255,255,0.7)}
       </div>
     </div>
 
+    <!-- TapPizza Block -->
+    <div class="proj-card">
+      <div class="proj-img">
+        <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/TapPizza%20Images/3D%20Printed%20Blocks.png" alt="TapPizza Block"/>
+        <div class="proj-img-overlay"></div>
+        <div class="proj-tag-badge">Product Design</div>
+        <div class="award-badge" style="background:#00c896;color:#fff;">✦ Latest</div>
+      </div>
+      <div class="proj-body">
+        <span class="proj-location">Northeastern University</span>
+        <div class="proj-title">TapPizza Block</div>
+        <div class="proj-desc">A pizza-style modular tapping block — reimagining the standard rectangular tapping block as a radial wheel of wedge-shaped segments, each containing tap holes for a different thread standard.</div>
+        <ul class="proj-bullets">
+          <li>Designed wedge geometry and hole spacing across Metric, NPT, and UNC thread sizes</li>
+          <li>Iterated print orientation and kerf tolerances across multiple Prusa prints</li>
+          <li>Modular segments allow individual replacement without scrapping the full tool</li>
+        </ul>
+        <div class="proj-pills">
+          <span class="pill">SolidWorks</span>
+          <span class="pill">FDM Printing</span>
+          <span class="pill">Prusa</span>
+          <span class="pill">Iterative Prototyping</span>
+        </div>
+        <a href="#" class="proj-cta" onclick="document.getElementById('modal-tappizza').classList.add('active');return false;">Read More</a>
+      </div>
+    </div>
+
+    <!-- Tambour Door Giftbox -->
+    <div class="proj-card">
+      <div class="proj-img">
+        <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/Giftbox/Giftbox%20Iso.jpg" alt="Tambour Door Giftbox"/>
+        <div class="proj-img-overlay"></div>
+        <div class="proj-tag-badge">Product Design</div>
+        <div class="award-badge" style="background:#00c896;color:#fff;">✦ Latest</div>
+      </div>
+      <div class="proj-body">
+        <span class="proj-location">Northeastern University</span>
+        <div class="proj-title">Tambour Door Giftbox</div>
+        <div class="proj-desc">A laser-cut gift box with a tambour-style sliding slat mechanism — thin parallel wood strips kerf-bent to flex around a curved track, designed to house the TapPizza Block.</div>
+        <ul class="proj-bullets">
+          <li>Iterated kerf spacing across test cuts to find the sweet spot for wood flexibility</li>
+          <li>Dimensioned box body to fit the TapPizza Block snugly</li>
+          <li>Delivered a clean hinge-free box that opens with a satisfying slide</li>
+        </ul>
+        <div class="proj-pills">
+          <span class="pill">Laser Cutting</span>
+          <span class="pill">Kerf Bending</span>
+          <span class="pill">CAD</span>
+          <span class="pill">Iterative Prototyping</span>
+        </div>
+        <a href="#" class="proj-cta" onclick="document.getElementById('modal-giftbox').classList.add('active');return false;">Read More</a>
+      </div>
+    </div>
+
     <!-- Project 02 – Oil Spill Recovery Robot -->
     <div class="proj-card">
       <div class="proj-img" style="position:relative">
@@ -573,7 +627,42 @@ footer strong{color:rgba(255,255,255,0.7)}
   <img id="lightbox-img" src="" alt=""/>
 </div>
 
-<!-- BACK CUSHION MODAL -->
+<!-- TAPPIZZA MODAL -->
+<div class="modal-overlay" id="modal-tappizza" onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="modal">
+    <div class="modal-close"><button onclick="document.getElementById('modal-tappizza').classList.remove('active')">✕</button></div>
+    <div class="modal-body">
+      <div class="modal-title">TapPizza Block</div>
+      <div class="modal-subtitle">GE 5030 Iterative Product Prototyping · Northeastern University · 2025</div>
+      <div class="modal-desc">The instructions were simple: design and 3D print a tapping block, but make it original. The TapPizza Block reimagines the standard rectangular tapping block as a pizza-style wheel divided into wedge-shaped segments, each containing tap holes for a different thread size. The radial layout keeps all sizes accessible without searching, while modular segments allow damaged or worn sections to be reprinted individually rather than scrapping the whole tool.</div>
+
+      <div class="modal-section-title">Design & CAD</div>
+      <div class="modal-gallery">
+        <div class="modal-gallery-item full">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/TapPizza%20Images/CAD%20Iso.png" alt="TapPizza CAD"/>
+          <div class="modal-img-caption"><strong>CAD Model — Isometric View</strong>Pizza-wheel assembly showing wedge segments for Metric (M3–M20), NPT (1/8"–3/4"), and UNC (4-40 to 9/16-12) thread standards. Diameter: 200mm.</div>
+        </div>
+      </div>
+
+      <div class="modal-section-title">Slicing & Print Orientation</div>
+      <div class="modal-gallery">
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/TapPizza%20Images/Slicing%20-%20Horizontal%20Orientation.png" alt="Horizontal Slicing"/>
+          <div class="modal-img-caption"><strong>Horizontal Orientation</strong>Flat print orientation used for final production — better hole accuracy and surface finish on tap holes.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/TapPizza%20Images/Slicing%20-%20Vertical%20Orientation.png" alt="Vertical Slicing"/>
+          <div class="modal-img-caption"><strong>Vertical Orientation (Rejected)</strong>Vertical arrangement caused inaccurate hole sizes and base warping — identified through iterative testing.</div>
+        </div>
+        <div class="modal-gallery-item full">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/TapPizza%20Images/3D%20Printed%20Blocks.png" alt="3D Printed TapPizza Blocks"/>
+          <div class="modal-img-caption"><strong>Final Printed Blocks</strong>Completed TapPizza Block segments fresh off the Prusa — modular wedges covering all three thread standards.</div>
+        </div>
+      </div>
+
+      <div class="modal-section-title">Key Outcomes</div>
+      <ul class="modal-bullets">
+        <li>Designed radial wedge geometry covering Metric (M3–M20), N
 <div class="modal-overlay" id="modal-cushion" onclick="if(event.target===this)this.classList.remove('active')">
   <div class="modal">
     <div class="modal-close"><button onclick="document.getElementById('modal-cushion').classList.remove('active')">✕</button></div>
