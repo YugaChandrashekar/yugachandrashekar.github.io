@@ -525,21 +525,33 @@ footer strong{color:rgba(255,255,255,0.7)}
   <div class="sec-tag">Leadership & Engagement</div>
   <h2 class="sec-title">Beyond engineering.</h2>
   <div class="lead-grid">
-    <div class="lead-card">
+    <div class="lead-card" style="cursor:pointer" onclick="document.getElementById('modal-ncc').classList.add('active');return false;">
       <div class="lead-icon">⭐</div>
-      <div class="lead-text">Head of BNMIT NCC – Company Sergeant Major & NCC Ambassador</div>
+      <div>
+        <div class="lead-text">NCC – Company Sergeant Major & Ambassador</div>
+        <div style="font-size:11px;color:var(--acc);margin-top:4px;font-weight:600">2019–2023 · BNMIT</div>
+      </div>
     </div>
-    <div class="lead-card">
-      <div class="lead-icon">⚡</div>
-      <div class="lead-text">Executive Committee Member – IEEE BNMIT</div>
-    </div>
-    <div class="lead-card">
+    <div class="lead-card" style="cursor:pointer" onclick="document.getElementById('modal-tedx-ieee').classList.add('active');return false;">
       <div class="lead-icon">🎤</div>
-      <div class="lead-text">Event Coordinator – TEDxBNMIT</div>
+      <div>
+        <div class="lead-text">TEDxBNMIT & IEEE BNMIT – Event Coordinator</div>
+        <div style="font-size:11px;color:var(--acc);margin-top:4px;font-weight:600">2022–2023 · BNMIT</div>
+      </div>
     </div>
-    <div class="lead-card">
+    <div class="lead-card" style="cursor:pointer" onclick="document.getElementById('modal-emc').classList.add('active');return false;">
+      <div class="lead-icon">🎯</div>
+      <div>
+        <div class="lead-text">Head of Event Management – EMC, BNMIT Student Clubs</div>
+        <div style="font-size:11px;color:var(--acc);margin-top:4px;font-weight:600">Aug 2022 – May 2023 · BNMIT</div>
+      </div>
+    </div>
+    <div class="lead-card" style="cursor:pointer" onclick="document.getElementById('modal-sports').classList.add('active');return false;">
       <div class="lead-icon">🏊</div>
-      <div class="lead-text">Represented Karnataka State Water Polo Team</div>
+      <div>
+        <div class="lead-text">Karnataka State Water Polo & Sports</div>
+        <div style="font-size:11px;color:var(--acc);margin-top:4px;font-weight:600">2017–2023 · State & National Level</div>
+      </div>
     </div>
   </div>
 </section>
@@ -603,6 +615,141 @@ footer strong{color:rgba(255,255,255,0.7)}
 <!-- LIGHTBOX -->
 <div class="img-lightbox" id="lightbox" onclick="this.classList.remove('active')">
   <img id="lightbox-img" src="" alt=""/>
+</div>
+
+<!-- NCC MODAL -->
+<div class="modal-overlay" id="modal-ncc" onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="modal">
+    <div class="modal-close"><button onclick="document.getElementById('modal-ncc').classList.remove('active')">✕</button></div>
+    <div class="modal-body">
+      <div class="modal-title">NCC – Company Sergeant Major & Ambassador</div>
+      <div class="modal-subtitle">2 KAR BN NCC · BNM Institute of Technology · 2019–2023</div>
+      <div class="modal-desc">Progressed through NCC ranks from Cadet to Company Sergeant Major across school (3 KAR BN NCC) and college (2 KAR BN NCC), earning all three NCC certificates. Recognized as "Excellent NCC Ambassador" of BNMIT for sustained contributions across 2019–2023.</div>
+      <div class="modal-section-title">Gallery</div>
+      <div class="modal-gallery">
+        <div class="modal-gallery-item full">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/NCC/Best%20NCC%20Cadet%20-%202023.jpg" alt="Best NCC Cadet 2023"/>
+          <div class="modal-img-caption"><strong>Excellent NCC Ambassador – 2023</strong>Recognized for outstanding contributions to BNMIT NCC across 2019–2023.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/NCC/Head%20of%20BNMIT%20NCC.jpg" alt="Head of BNMIT NCC"/>
+          <div class="modal-img-caption"><strong>Head of BNMIT NCC</strong>Serving as Company Sergeant Major, leading the BNMIT NCC company.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/NCC/Leading%20Drills.jpg" alt="Leading Drills"/>
+          <div class="modal-img-caption"><strong>Leading Drills</strong>Commanding cadets during drill practice and training sessions.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/NCC/Leading%20Drills%202.jpg" alt="Leading Drills 2"/>
+          <div class="modal-img-caption"><strong>Leading Drills — 2</strong>Field drill session with cadets at BNMIT.</div>
+        </div>
+      </div>
+      <div class="modal-section-title">Key Highlights</div>
+      <ul class="modal-bullets">
+        <li>Recognized as "Excellent NCC Ambassador" of BNMIT for contributions during 2019–2023</li>
+        <li>Completed All India Trekking Expedition — Kerala Trek 1, Kulamavu (Oct 2015)</li>
+        <li>Attended Annual Training Camps at Doddaballapura (Feb 2021) and Tavarekere (Oct 2021)</li>
+        <li>Earned all three NCC certificates — 'A' (Grade A, 2015–16), 'B' (Grade A, 2020–21), 'C' (Grade B, 2022)</li>
+        <li>Completed NDRF Rescue Operations & First Aid training by 10th BN NDRF at BNMIT (Sept 2021)</li>
+        <li>Developed leadership, crisis management, and team coordination through drills, camps, and discipline programs</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- TEDX IEEE MODAL -->
+<div class="modal-overlay" id="modal-tedx-ieee" onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="modal">
+    <div class="modal-close"><button onclick="document.getElementById('modal-tedx-ieee').classList.remove('active')">✕</button></div>
+    <div class="modal-body">
+      <div class="modal-title">TEDxBNMIT & IEEE BNMIT – Event Coordinator</div>
+      <div class="modal-subtitle">BNMIT Student Organizations · 2022–2023</div>
+      <div class="modal-desc">Served as Event Coordinator on the IEEE-BNMIT Student Branch Organizing Committee and coordinated TEDxBNMIT events — recognized for extraordinary organisational skills and commitment across both organizations.</div>
+      <div class="modal-section-title">Gallery</div>
+      <div class="modal-gallery">
+        <div class="modal-gallery-item full">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/TEDx/TedX%20Team.jpg" alt="TEDx Team"/>
+          <div class="modal-img-caption"><strong>TEDxBNMIT Team</strong>With the TEDxBNMIT organizing team — coordinating speakers, logistics, and audience engagement.</div>
+        </div>
+      </div>
+      <div class="modal-section-title">Key Highlights</div>
+      <ul class="modal-bullets">
+        <li>Served as Event Coordinator on the IEEE-BNMIT Student Branch Organizing Committee (2022–23)</li>
+        <li>Coordinated TEDxBNMIT events — managing speakers, logistics, and audience engagement; recognized for extraordinary organisational skills and commitment</li>
+        <li>Secured 3rd place in Q-Quotient, a technical quiz organized by IEEE-BNMIT (Oct 2019)</li>
+        <li>Collaborated with cross-functional student teams across both organizations to deliver high-quality, well-attended events</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- EMC MODAL -->
+<div class="modal-overlay" id="modal-emc" onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="modal">
+    <div class="modal-close"><button onclick="document.getElementById('modal-emc').classList.remove('active')">✕</button></div>
+    <div class="modal-body">
+      <div class="modal-title">Head of Event Management – EMC</div>
+      <div class="modal-subtitle">Event Management Committee · BNMIT Student Clubs · Aug 2022 – May 2023</div>
+      <div class="modal-desc">Established and led the Event Management Committee, overseeing all student club events at BNMIT including Adventure Club BNMIT. Managed end-to-end event planning across club launches, orientations, inter-college engagement, and large-scale community initiatives.</div>
+      <div class="modal-section-title">Gallery</div>
+      <div class="modal-gallery">
+        <div class="modal-gallery-item full">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/EMC/EMC%20Team%20with%20Faculty.JPG" alt="EMC Team"/>
+          <div class="modal-img-caption"><strong>EMC Team with Faculty</strong>The Event Management Committee with faculty advisor — core team behind BNMIT student club events.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/EMC/Club%20Launch.JPG" alt="Club Launch"/>
+          <div class="modal-img-caption"><strong>Club Launch</strong>Organizing and hosting student club launches at BNMIT.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/EMC/Orientation.jpg" alt="Orientation"/>
+          <div class="modal-img-caption"><strong>Fresher Orientation</strong>Coordinating the freshman induction programme and orientation events.</div>
+        </div>
+        <div class="modal-gallery-item">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/EMC/CycleStreet.JPG" alt="GreenCircuit CycleStreet"/>
+          <div class="modal-img-caption"><strong>GreenCircuit – CycleStreet</strong>Part of the GreenCircuit initiative for World Environment Day — Cyclathon & Walkathon with 5000+ attendees (2022–2025).</div>
+        </div>
+      </div>
+      <div class="modal-section-title">Key Highlights</div>
+      <ul class="modal-bullets">
+        <li>Established & led the Event Management Committee, overseeing all student club events at BNMIT including Adventure Club BNMIT</li>
+        <li>Served as Student Mentor for ANVESHAN 2022 (two-week bridge course, Sept 2022) and PRODATHON (ten-day induction programme, Nov–Dec 2022)</li>
+        <li>Volunteered as quiz conductor during the freshman induction programme (Nov–Dec 2022)</li>
+        <li>Completed 40 hours of NSS volunteering focused on environmental conservation during World Environment Day (June 2022)</li>
+        <li>Co-organised GreenCircuit — CycleStreet (Cyclathon) & GreenMiles (Marathon/Walkathon) with 5000+ attendees (2022–2025)</li>
+        <li>Managed club launches, club days, on-campus engagement, fresher orientations, and inter-college coordination</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SPORTS MODAL -->
+<div class="modal-overlay" id="modal-sports" onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="modal">
+    <div class="modal-close"><button onclick="document.getElementById('modal-sports').classList.remove('active')">✕</button></div>
+    <div class="modal-body">
+      <div class="modal-title">Karnataka State Water Polo & Sports</div>
+      <div class="modal-subtitle">State & National Level · 2017–2023</div>
+      <div class="modal-desc">Represented Karnataka and Basavanagudi Aquatic Centre (BAC) at state, zonal, and national level water polo competitions, winning multiple medals. Also competed in basketball at BNMIT inter-department level.</div>
+      <div class="modal-section-title">Gallery</div>
+      <div class="modal-gallery">
+        <div class="modal-gallery-item full">
+          <img src="https://raw.githubusercontent.com/YugaChandrashekar/yugachandrashekar.github.io/main/HyCube/Parameter_/Waterpolo/Waterpolo%20South%20Zone%20Championship.jpg" alt="South Zone Championship"/>
+          <div class="modal-img-caption"><strong>30th South Zone Aquatic Championship</strong>Representing Karnataka — secured 2nd place at Chennai (Jan 2018).</div>
+        </div>
+      </div>
+      <div class="modal-section-title">Key Achievements</div>
+      <ul class="modal-bullets">
+        <li>🥇 Gold — Karnataka State Olympic Games 2017 (Hubli & Dharwad, Feb 2017), representing BAC</li>
+        <li>🏆 Represented Karnataka at the 63rd National School Games in Water Polo (U19, Pune, Dec 2017)</li>
+        <li>🥈 2nd place — 30th South Zone Aquatic Championship (Chennai, Jan 2018), representing Karnataka</li>
+        <li>🥇 1st place — State Sub-Junior & Junior Aquatic Championships 2017 (Bangalore) and 2018 (Mysuru), representing BAC</li>
+        <li>🥈 2nd place — State Senior Aquatic Championship 2017 (Bangalore)</li>
+        <li>🥇 1st place — BNMIT Inter-Department Basketball (2021–22)</li>
+        <li>🥈 2nd place — BNMIT Inter-Department Basketball (2022–23)</li>
+      </ul>
+    </div>
+  </div>
 </div>
 
 <!-- TAPPIZZA MODAL -->
